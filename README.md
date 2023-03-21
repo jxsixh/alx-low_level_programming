@@ -1,1 +1,1 @@
-My smart readme
+)x00 . C - Hello, World
