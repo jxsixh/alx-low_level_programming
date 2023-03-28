@@ -3,8 +3,7 @@
 /**
  * _puts - prints a string
  * @str: the string
- *
- * Return: the length of the string
+ * Return: void
  */
 void _puts(char *str)
 {
