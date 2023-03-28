@@ -16,7 +16,7 @@ void print_rev(char *s)
 
 	for (i = n - 1; i >= 0; i--)
 	{
-		_putchar(s[i]);
+		printf(s[i]);
 	}
-	_putchar('\n');
+	printf('\n');
 }
