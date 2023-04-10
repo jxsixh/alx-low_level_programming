@@ -5,30 +5,23 @@
  * main - adds positive numbers.
  * @argc: argument count
  * @argv: argument vector
- * Return: 0
+ * Return: 0 for success, 1 for error
  */
-int main(int argc, int **argv)
+int main(int argc, int *argv[])
 {
 	int i, n, sum = 0;
-	char *j;
 
-	if (argc < 2)
+	for (i = 1; i <= argc - 1; i++)
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (i = 1; argv[i]; i++)
-	{
-		n = strtol(argv[i], &j, 10);
-		if (*j)
+		for (n = 0; argv[i][n]; n++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!(*(*(argv + i) + n) >= '0' && *(*(argv + i) + n) <= '9'))
+			{
+				puts("Error");
+				return (1);
+			}
 		}
-		else
-		{
-			sum = sum + n;
-		}
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
