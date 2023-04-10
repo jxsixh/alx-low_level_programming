@@ -19,11 +19,11 @@ int main(int argc, int **argv)
 	}
 	for (i = 1; argv[i]; i++)
 	{
-		n = (argv[i], *j, 10);
+		n = strtol(argv[i], &j, 10);
 		if (*j)
 		{
 			printf("Error\n");
-			return (0);
+			return (1);
 		}
 		else
 		{
