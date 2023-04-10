@@ -8,7 +8,7 @@
  * @argv: argument array
  * Return: 0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int a, i, j;
 	int b = 0;
@@ -16,13 +16,13 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		_putchar("Error");
+		puts("Error");
 		return (1);
 	}
 	a = atoi(argv[1]);
 	if (a <= 0)
 	{
-		_putchar("0");
+		puts("0");
 		return (1);
 	}
 	else
@@ -36,6 +36,6 @@ int main(int argc, char **argv)
 				break;
 		}
 	}
-	printf("%d\n", n);
+	printf("%d\b", b);
 	return (0);
 }
