@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * wrdcnt - counts the number of wardds in a string
- * @s: string to count
- * Return: int of number of words
+ * count - checks number of strings
+ * @s: string
+ * Return: int
  */
 
-int wrdcnt(char *s)
+int count(char *s)
 {
 	int i, n = 0;
 
@@ -26,19 +26,19 @@ int wrdcnt(char *s)
 }
 
 /**
- * strtow - function returns a pointer to an array of strings
+ * strtow - splits a string into words
  * @str: string
- * Return: returnd pointer
+ * Return: pointer to an array of strings
  */
 
 char **strtow(char *str)
 {
-	int i, j, k, l, n = 0, wc = 0;
+	int i, j, a, b, n = 0, wc = 0;
 	char **w;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	n = wrdcnt(str);
+	n = count(str);
 	if (n == 1)
 		return (NULL);
 	w = (char **)malloc(n * sizeof(char *));
@@ -57,15 +57,15 @@ char **strtow(char *str)
 			j--;
 			if (w[wc] == NULL)
 			{
-				for (k = 0; k < wc; k++)
-					free(w[k]);
+				for (a = 0; a < wc; a++)
+					free(w[a]);
 				free(w[n - 1]);
 				free(w);
 				return (NULL);
 			}
-			for (l = 0; l < j; l++)
-				w[wc][l] = str[i + l];
-			w[wc][l] = '\0';
+			for (b = 0; b < j; b++)
+				w[wc][b] = str[i + b];
+			w[wc][b] = '\0';
 			wc++;
 			i += j;
 		}
