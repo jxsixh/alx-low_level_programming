@@ -10,15 +10,15 @@ void print_dog(struct dog *d)
 {
 if (d)
 {
-if (d->name)
-printf("name: %s\n", d->name);
+if ((*d).name)
+printf("Name: %s\n", d->name);
 else
-printf("name: (nil)\n");
-printf("age: %.6f\n", d->age);
+printf("Name: (nil)\n");
+printf("Age: %.6f\n", d->age);
 if (d->owner)
-printf("owner: %s\n", d->owner);
+printf("Owner: %s\n", d->owner);
 else
-printf("owner: (nil)\n");
+printf("Owner: (nil)\n");
 }
 }
 
